@@ -37,7 +37,7 @@ public class Exe14 {
 			System.out.println("N - Não");
 			refri = entrada.next().charAt(0);
 			refri = Character.toUpperCase(refri);
-			while(refri!='S' | refri!='N'){
+			while(refri!='S' && refri!='N'){
 				System.out.println("Código Inválido!!!");
 				System.out.println();
 				System.out.println("Digite novamente:");
@@ -53,7 +53,7 @@ public class Exe14 {
 			System.out.println("V - Vestuário");
 			categoria = entrada.next().charAt(0);
 			categoria = Character.toUpperCase(categoria);
-			while(categoria!='A' | categoria!='L' | categoria!='V' ){
+			while(categoria!='A' && categoria!='L' && categoria!='V' ){
 				System.out.println("Código Inválido!!!");
 				System.out.println();
 				System.out.println("Digite novamente:");
