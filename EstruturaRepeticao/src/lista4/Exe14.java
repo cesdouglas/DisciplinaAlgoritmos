@@ -1,4 +1,4 @@
-package ExerciciosRepeticao;
+package lista4;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 

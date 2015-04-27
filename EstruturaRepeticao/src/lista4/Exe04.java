@@ -1,4 +1,4 @@
-package ExerciciosRepeticao;
+package lista4;
 import java.util.Scanner;
 
 public class Exe04 {
