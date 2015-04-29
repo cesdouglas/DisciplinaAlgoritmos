@@ -102,8 +102,8 @@ public class Exe17 {
 					}
 
 			System.out.println("Deseja cadastrar nova locação? \n S- SIM \n N-NÃO: ");
-			deseja = entrada.next().charAt(0);
-			deseja = Character.toUpperCase(deseja);
+			deseja2 = entrada.next().charAt(0);
+			deseja2 = Character.toUpperCase(deseja2);
 
 			while(deseja2!='S' && deseja2!='N'){
 				System.out.println("Código Incorreto!!! \n Deseja cadastrar nova locação? \n S- SIM \n N-NÃO:");
