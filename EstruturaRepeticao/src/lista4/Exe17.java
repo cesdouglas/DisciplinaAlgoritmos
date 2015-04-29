@@ -15,10 +15,10 @@ public class Exe17 {
 		char deseja2= 'S';
 		int locacao = 0;
 		double totalLoc = 0;
-		int i = 0;
 		double maiorPreco=0;
 		double menorPreco=0;
-		int cliente = 0;
+		int clienteMaior = 0;
+		int clienteMenor = 0;
 
 		while(deseja2=='S'){
 			System.out.println("Código do cliente: ");
@@ -83,21 +83,22 @@ public class Exe17 {
 			if(contDvd>=4){
 				valorTotal=valorTotal*0.95;
 			}
-			i++;
+			
 			//Valor Final da locação
 			System.out.println("Valor Total: " + valorTotal);
 			totalLoc=totalLoc+valorTotal;
-			if(i==1){
-				cliente = codigoCliente;
+			if(locacao==1){
+				clienteMenor = codigoCliente;
+				clienteMaior = codigoCliente;
 				maiorPreco=valorTotal;
 				menorPreco=valorTotal;
 			}else
 				if(valorTotal>maiorPreco){
-					cliente = codigoCliente;
+					clienteMaior = codigoCliente;
 					maiorPreco=valorTotal;
 				}else
 					if(valorTotal<menorPreco){
-						cliente = codigoCliente;
+						clienteMenor = codigoCliente;
 						menorPreco=valorTotal;
 					}
 
@@ -115,8 +116,8 @@ public class Exe17 {
 		
 		System.out.println("Numéro de locações: " + locacao);
 		System.out.println("Valor total de locações:" + totalLoc);
-		System.out.println("Código Cliente: " + cliente + " Maior Preço: " + maiorPreco);
-		System.out.println("Código Cliente: " + cliente + " Menor Preço: " + menorPreco);
+		System.out.println("Código Cliente: " + clienteMaior + " Maior Preço: " + maiorPreco);
+		System.out.println("Código Cliente: " + clienteMenor + " Menor Preço: " + menorPreco);
 		
 
 
