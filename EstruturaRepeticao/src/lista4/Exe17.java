@@ -102,6 +102,7 @@ public class Exe17 {
 						menorPreco=valorTotal;
 					}
 
+			locacao++;
 			System.out.println("Deseja cadastrar nova locação? \n S- SIM \n N-NÃO: ");
 			deseja2 = entrada.next().charAt(0);
 			deseja2 = Character.toUpperCase(deseja2);
@@ -111,7 +112,10 @@ public class Exe17 {
 				deseja2 = entrada.next().charAt(0);
 				deseja2 = Character.toUpperCase(deseja2);	
 			}
-			locacao++;
+			deseja='S';
+			valorTotal=0;
+			contDvd=0;
+			
 		}
 		
 		System.out.println("Numéro de locações: " + locacao);
