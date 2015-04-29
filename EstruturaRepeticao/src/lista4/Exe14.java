@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Exe14 {
 	public static void main(String[] args) {
-		
+
 		Scanner entrada = new Scanner (System.in);
 		DecimalFormat numFormatado = new DecimalFormat ("R$ ###0.00");
-		
+
 		//Declaração de variáveis
 		double preco = 0;
 		double estoq = 0;
@@ -24,19 +24,20 @@ public class Exe14 {
 		int contBarato=0;
 		int contNormal=0;
 		int contCaro=0;
-		
-		
-		
-		for(int i=0;i<12;i++){
-			
+
+
+
+		for(int i=1;i<13;i++){
+
 			//Entradas
-			System.out.println("Preço Unitário: "); 
+			System.out.println("Preço Unitário do : " + i + "º produto: "); 
 			preco = entrada.nextDouble();
 			System.out.println("Refrigeração:");
 			System.out.println("S - Sim");
 			System.out.println("N - Não");
 			refri = entrada.next().charAt(0);
 			refri = Character.toUpperCase(refri);
+
 			while(refri!='S' && refri!='N'){
 				System.out.println("Código Inválido!!!");
 				System.out.println();
@@ -47,12 +48,14 @@ public class Exe14 {
 				refri = entrada.next().charAt(0);
 				refri = Character.toUpperCase(refri);
 			}
-			System.out.println("Categoria: ");
+
+			System.out.println("Categoria do " + i + "º produto: ");
 			System.out.println("A - Alimentação");
 			System.out.println("L - Limpeza");
 			System.out.println("V - Vestuário");
 			categoria = entrada.next().charAt(0);
 			categoria = Character.toUpperCase(categoria);
+
 			while(categoria!='A' && categoria!='L' && categoria!='V' ){
 				System.out.println("Código Inválido!!!");
 				System.out.println();
@@ -64,7 +67,7 @@ public class Exe14 {
 				categoria = entrada.next().charAt(0);
 				categoria = Character.toUpperCase(categoria);
 			}
-		
+
 			//Tabela
 			if(preco<=20){
 				if(categoria=='A'){
@@ -92,24 +95,24 @@ public class Exe14 {
 								estoq=4;
 							}								
 					}else{
-						if(categoria=='A' | categoria=='V'){
+						if(categoria=='A' || categoria=='V'){
 							estoq=0;
 						}else{
 							estoq=1;
 						}
 					}
 				}			
-			
+
 			//Imposto
-			if(categoria=='A' | refri=='S'){
+			if(categoria!='A' && refri!='S'){
 				imposto=1.02;
 			}else{
 				imposto=1.04;
 			}
-			
+
 			//Preço Final
 			precoFinal=estoq+preco*imposto;
-			
+
 			//Tabela Classificação
 			if(precoFinal<=20){
 				msg="Barato";
@@ -123,24 +126,30 @@ public class Exe14 {
 					contCaro++;
 				}
 			System.out.println(msg);
-			
-			//Médias
-			mediaEstoq=mediaEstoq+estoq;
-			mediaImposto=mediaImposto+imposto;
-			
-			//Maior e menor preço
-			if(precoFinal>maiorPreco){
-				maiorPreco=precoFinal;
-			}
-			if(precoFinal<menorPreco){
-				menorPreco=precoFinal;
-			}
-			
+
 			//Total Imposto
 			imposto=preco*imposto-preco;
 			totalImposto=totalImposto+imposto;
+
+			//Médias
+			mediaEstoq=mediaEstoq+estoq+imposto;
+			mediaImposto=mediaImposto+imposto;
+
+			//Maior e menor preço
+			if(i==1){
+				maiorPreco=precoFinal;
+				menorPreco=precoFinal;
+			}else
+				if(precoFinal>maiorPreco){
+					maiorPreco=precoFinal;
+				}else
+					if(precoFinal<menorPreco){
+						menorPreco=precoFinal;
+					}
+
+
 		}
-		
+
 		//Saídas
 		System.out.println("Média dos Custos de Estocagem: "+ mediaEstoq/12 + "%");
 		System.out.println("Média dos Custos de Impostos: "+ mediaImposto/12 + "%");
@@ -150,12 +159,12 @@ public class Exe14 {
 		System.out.println("Qtde produtos class Barato: " + contBarato);
 		System.out.println("Qtde produtos class Normal: " + contNormal);
 		System.out.println("Qtde produtos class Caro: " + contCaro);
-		
-		
-		 
-		
-		
-		
+
+
+
+
+
+
 		entrada.close();
 	}
 }
