@@ -10,6 +10,7 @@ public class Exe15 {
 		char sexo = '\u0000';
 		char exp = '\u0000';
 		int contM = 0;
+		int contMs = 0;
 		int contF = 0;
 		double idadeMedia = 0;
 		int menorIdade = 999;
@@ -36,7 +37,10 @@ public class Exe15 {
 				
 				if(sexo=='M'){
 					contM++;
+					if(exp=='S'){
 					idadeMedia=idadeMedia+idade;
+					contMs++;
+					}
 					if(idade>45){
 						cont45++;
 					}
@@ -59,8 +63,8 @@ public class Exe15 {
 
 		System.out.println("Candidatos Femininos: " + contF);
 		System.out.println("Candidatos Masculinos: " + contM);
-		System.out.println("Idade Média de Homens com experiência: " + (double)idadeMedia/contM);
-		System.out.println("Porcentagem de homens com mais de 45 Anos " + (double)cont45/contM*100 + "%");
+		System.out.println("Idade Média de Homens com experiência: " + (double)idadeMedia/contMs);
+		System.out.println("Porcentagem de homens com mais de 45 Anos: " + (double)cont45/contM*100 + "%");
 		System.out.println("Porcentagem de mulheres com menos de 21 Anos com experiência: " + (double)cont21S/contF*100 + "%");
 		System.out.println("Menor idade entre as mulheres com experiência: " + menorIdade);
 		
