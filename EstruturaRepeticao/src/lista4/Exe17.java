@@ -1,10 +1,12 @@
 package lista4;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Exe17 {
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
+		DecimalFormat numFormatado = new DecimalFormat ("R$ ###0.00");
 		int codigoCliente = 0;
 		int codigoDvd = 0;
 		char tipo = '\u0000';
@@ -16,7 +18,7 @@ public class Exe17 {
 		int locacao = 0;
 		double totalLoc = 0;
 		double maiorPreco=0;
-		double menorPreco=0;
+		double menorPreco=9999;
 		int clienteMaior = 0;
 		int clienteMenor = 0;
 
@@ -85,22 +87,18 @@ public class Exe17 {
 			}
 			
 			//Valor Final da locação
-			System.out.println("Valor Total: " + valorTotal);
+			System.out.println("Quantidade de DVDs: " + contDvd);
+			System.out.println("Valor Total: " + numFormatado.format(valorTotal));
 			totalLoc=totalLoc+valorTotal;
-			if(locacao==1){
-				clienteMenor = codigoCliente;
+
+			if(valorTotal>maiorPreco){
 				clienteMaior = codigoCliente;
 				maiorPreco=valorTotal;
-				menorPreco=valorTotal;
 			}else
-				if(valorTotal>maiorPreco){
-					clienteMaior = codigoCliente;
-					maiorPreco=valorTotal;
-				}else
-					if(valorTotal<menorPreco){
-						clienteMenor = codigoCliente;
-						menorPreco=valorTotal;
-					}
+				if(valorTotal<menorPreco){
+					clienteMenor = codigoCliente;
+					menorPreco=valorTotal;
+				}
 
 			locacao++;
 			System.out.println("Deseja cadastrar nova locação? \n S- SIM \n N-NÃO: ");
@@ -119,9 +117,9 @@ public class Exe17 {
 		}
 		
 		System.out.println("Numéro de locações: " + locacao);
-		System.out.println("Valor total de locações:" + totalLoc);
-		System.out.println("Código Cliente: " + clienteMaior + " Maior Preço: " + maiorPreco);
-		System.out.println("Código Cliente: " + clienteMenor + " Menor Preço: " + menorPreco);
+		System.out.println("Valor total de locações:" + numFormatado.format(totalLoc));
+		System.out.println("Código Cliente: " + clienteMaior + " Maior Preço: " + numFormatado.format(maiorPreco));
+		System.out.println("Código Cliente: " + clienteMenor + " Menor Preço: " + numFormatado.format(menorPreco));
 		
 
 
