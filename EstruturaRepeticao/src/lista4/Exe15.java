@@ -12,7 +12,7 @@ public class Exe15 {
 		int contM = 0;
 		int contF = 0;
 		double idadeMedia = 0;
-		int menorIdade = 0;
+		int menorIdade = 999;
 		int cont45 = 0;
 		int cont21S = 0;
 		
@@ -32,6 +32,7 @@ public class Exe15 {
 				System.out.println("N - Não");
 				exp = entrada.next().charAt(0);
 				exp = Character.toUpperCase(exp);
+				
 				
 				if(sexo=='M'){
 					contM++;
