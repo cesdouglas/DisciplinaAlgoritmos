@@ -14,7 +14,7 @@ public class Exe04{
 		System.out.println("Digite o nome para procurar no vetor: ");
 		digitado = entrada.next();		
 		for(i=0;i<10;i++){	
-			if(digitado.equalsIgnoreCase(digitado)==arrayNome[i].equalsIgnoreCase(digitado)){
+			if(arrayNome[i].equalsIgnoreCase(digitado)){
 				System.out.println("Achei! Posição: " + (i+1) + "º");
 			}else{
 				System.out.println("Não Achei!!!");
