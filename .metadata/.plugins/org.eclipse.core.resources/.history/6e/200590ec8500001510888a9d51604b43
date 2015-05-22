@@ -1,0 +1,6 @@
+package ltp.orientacaoobjeto;
+
+public class CD extends Produto {
+	private String artista;
+	private String gravadora;
+}

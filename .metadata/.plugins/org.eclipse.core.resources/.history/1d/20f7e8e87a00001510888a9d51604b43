@@ -1,0 +1,15 @@
+package ltp.orientacaoobjeto;
+
+public class Produto {
+	private String descricao;
+	private int codigo;
+	private double valor;
+
+	public void setValor(double v){
+		valor=v;
+	}
+	
+	public double getValor(){
+		return valor;
+	}
+}

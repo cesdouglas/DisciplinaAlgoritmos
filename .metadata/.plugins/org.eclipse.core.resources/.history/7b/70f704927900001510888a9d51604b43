@@ -1,0 +1,9 @@
+package ltp.orientacaoobjeto;
+
+public class Teste {
+	public static void main(String[] args) {
+		Produto p = new Produto();
+		p.setValor(100);
+		System.out.println(p.getValor());
+	}
+}

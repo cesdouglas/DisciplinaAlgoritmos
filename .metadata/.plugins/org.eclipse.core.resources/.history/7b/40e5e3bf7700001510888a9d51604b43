@@ -1,0 +1,8 @@
+package ltp.orientacaoobjeto;
+
+public class Produto {
+	private String descricao;
+	private int codigo;
+	private double valor;
+
+}

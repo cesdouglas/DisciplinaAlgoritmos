@@ -1,0 +1,12 @@
+package ltp.orientacaoobjeto;
+
+import javax.swing.JOptionPane;
+
+public class Teste {
+	public static void main(String[] args) {
+		Produto p = new Produto();
+		p.setValor(Double.parseDouble(JOptionPane.showInputDialog("Digite o valor: ")));
+		p.setCodigoDescricao(Integer.parseInt(JOptionPane.showInputDialog("Digite o Código: ")), JOptionPane.showInputDialog("Digite a descrição: "));
+		System.out.println(p.getValor());
+	}
+}
