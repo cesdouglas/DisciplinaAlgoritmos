@@ -1,0 +1,17 @@
+package br.com.fiap.testes;
+
+import javax.swing.JOptionPane;
+
+import br.com.fiap.beans.Fornecedor;
+import br.com.fiap.beans.Livro;
+
+public class Teste {
+	public static void main(String[] args) {
+		livro livro = new Livro();
+		livro.setValor(Double.parseDouble(JOptionPane.showInputDialog("Digite o valor: ")));
+		Fornecedor fornecedor = new Fornecedor();
+		livro.setFornecedor(fornecedor);
+		fornecedor.setCnpj(cnpj);
+		
+	}
+}

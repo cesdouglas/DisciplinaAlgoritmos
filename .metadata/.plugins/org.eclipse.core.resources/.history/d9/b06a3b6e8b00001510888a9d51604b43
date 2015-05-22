@@ -5,6 +5,7 @@ public class Produto {
 	protected int codigo;
 	protected double valor;
 	protected Fornecedor fornecedor;
+	
 	public String getDescricao() {
 		return descricao;
 	}
@@ -23,24 +24,18 @@ public class Produto {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	public Fornecedor getFornecedor() {
-		return fornecedor;
-	}
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
-	}
-	public Produto(String descricao, int codigo, double valor,
-			Fornecedor fornecedor) {
+	
+	public Produto(String descricao, int codigo, double valor) {
 		super();
 		this.descricao = descricao;
 		this.codigo = codigo;
 		this.valor = valor;
-		this.fornecedor = fornecedor;
 	}
+	
 	public Produto() {
 		super();
 	}
 
-
-
+	
+	
 }

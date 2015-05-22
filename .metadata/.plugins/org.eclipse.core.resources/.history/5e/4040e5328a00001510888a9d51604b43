@@ -1,0 +1,8 @@
+package br.com.fiap.beans;
+
+public class Fornecedor {
+	private String razaoSocial;
+	private String cnpj;
+	
+	
+}

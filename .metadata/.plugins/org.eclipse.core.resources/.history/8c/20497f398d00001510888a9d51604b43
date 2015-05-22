@@ -9,16 +9,13 @@ public class Teste {
 	static String texto(String d){
 		return JOptionPane.showInputDialog(d);
 	}
-	static double decimal(String d){
-		return Double.parseDouble(JOptionPane.showInputDialog(d));
-	}
 	
 	public static void main(String[] args) {
 		Livro livro = new Livro();
-		livro.setValor(decimal("Digite o valor: "));
+		livro.setValor(Double.parseDouble(JOptionPane.showInputDialog("Digite o valor: ")));
 		Fornecedor fornecedor = new Fornecedor();
 		livro.setFornecedor(fornecedor);
-		fornecedor.setCnpj(texto("Digite o CNPJ"));
+		fornecedor.setCnpj(cnpj);
 		
 	}
 }

@@ -15,7 +15,7 @@ public class Teste {
 	
 	public static void main(String[] args) {
 		Livro livro = new Livro();
-		livro.setValor(decimal("Digite o valor: "));
+		livro.setValor(decimal("Digite o valor: ")));
 		Fornecedor fornecedor = new Fornecedor();
 		livro.setFornecedor(fornecedor);
 		fornecedor.setCnpj(texto("Digite o CNPJ"));
