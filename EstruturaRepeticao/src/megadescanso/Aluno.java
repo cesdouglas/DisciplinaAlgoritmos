@@ -5,7 +5,7 @@ public class Aluno extends PFisicaAcademia {
 	private String dtMatricula;
 	
 	public void mostraTudo (Aluno a){
-		System.out.println(a.getCpf(),a.getDtMatricula(),getDtNascimento(),a.getEmail(),a.getEndereco(),a.getInstituicao(),a.getNome(),a.getNumeroMatricula());
+//		System.out.println(a.getCpf(),a.getDtMatricula(),getDtNascimento(),a.getEmail(),a.getEndereco(),a.getInstituicao(),a.getNome(),a.getNumeroMatricula());
 	}
 	
 	public Aluno() {
