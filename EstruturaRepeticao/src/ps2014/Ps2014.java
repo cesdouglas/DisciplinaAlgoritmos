@@ -25,17 +25,18 @@ public class Ps2014 {
 		int fp = 0;
 		int parcela = 0;
 
-		while(desejaVenda == 'S'){
+		while (desejaVenda == 'S') {
 
 			System.out.println("Nome do cliente: ");
 			nome = entrada.next();
-
+			desejaIngresso = 'S';
 			while (desejaIngresso == 'S') {
 				System.out.println("Código do Jogo: ");
 				codigo = entrada.nextInt();
 
 				while (codigo < 1 || codigo > 7) {
-					System.out.println("Código inválido!!! \n Código do Jogo: ");
+					System.out
+							.println("Código inválido!!! \n Código do Jogo: ");
 					codigo = entrada.nextInt();
 				}
 
@@ -122,69 +123,82 @@ public class Ps2014 {
 					break;
 				}
 
-				valorCompra = valor * quant;
+				valorCompra += valor * quant;
 				ingresso += quant;
-				ingressoVendido += ingresso;
-				valorTotal += valorCompra;					
+				valorTotal += valorCompra;
 
-				System.out.println("Valor: " + numFormatado.format(valorCompra));
+				System.out
+						.println("Valor: " + numFormatado.format(valorCompra));
 
 				System.out.println("Deseja comprar mais ingressos? S/N");
 				desejaIngresso = entrada.next().charAt(0);
 				desejaIngresso = Character.toUpperCase(desejaIngresso);
 				while (desejaIngresso != 'S' && desejaIngresso != 'N') {
-					System.out.println("Código inválido!!! \n Deseja comprar mais ingressos? S/N");
+					System.out
+							.println("Código inválido!!! \n Deseja comprar mais ingressos? S/N");
 					desejaIngresso = entrada.next().charAt(0);
 					desejaIngresso = Character.toUpperCase(desejaIngresso);
 				}
-				quant = 0;
-				valorCompra = 0;
 			}
 
 			System.out.println("Nome do cliente: " + nome
 					+ "\n Quantidade de Ingressos: " + ingresso + "\n Valor: "
-					+ valorTotal);
+					+ valorCompra);
 
-			System.out.println("Forma de Pagamento? \n 1 - Pagamento à vista 5% de desconto \n 2 - Pagamento parcelado");
+			System.out
+					.println("Forma de Pagamento? \n 1 - Pagamento à vista 5% de desconto \n 2 - Pagamento parcelado");
 			fp = entrada.nextInt();
 
 			while (fp < 1 || fp > 2) {
-				System.out.println("Código inválido!!! \n Forma de Pagamento? \n 1 - Pagamento à vista 5% de desconto \n 2 - Pagamento parcelado (máximo 10 parcelas)");
+				System.out
+						.println("Código inválido!!! \n Forma de Pagamento? \n 1 - Pagamento à vista 5% de desconto \n 2 - Pagamento parcelado (máximo 10 parcelas)");
 				fp = entrada.nextInt();
 			}
 
-			if(fp==1){
-				valorTotal*=0.95;
-				System.out.println("Valor à vista: " + numFormatado.format(valorTotal));
-			}else{
+			if (fp == 1) {
+				valorTotal *= 0.95;
+				System.out.println("Valor à vista: "
+						+ numFormatado.format(valorCompra));
+			} else {
 				System.out.println("Número de Parcelas: ");
 				parcela = entrada.nextInt();
-				while(parcela>10 || parcela<1){
-					System.out.println("Número de Parcelas Inválido!!! \n Número de Parcelas: ");
+				while (parcela > 10 || parcela < 1) {
+					System.out
+							.println("Número de Parcelas Inválido!!! \n Número de Parcelas: ");
 					parcela = entrada.nextInt();
-				}			
-				System.out.println("Parcelado: " + parcela + "x" + numFormatado.format(valorTotal/parcela));
+				}
+				System.out.println("Parcelado: " + parcela + "x"
+						+ numFormatado.format(valorCompra / parcela));
 			}
-			
-			totalVenda+=valorTotal;
-		
-			if(valorTotal>maiorVenda){
-				maiorVenda=valorTotal;
+
+			totalVenda += valorTotal;
+			ingressoVendido += ingresso;
+
+			if (valorTotal > maiorVenda) {
+				maiorVenda = valorTotal;
 			}
-			
+
 			System.out.println("Deseja cadastrar uma nova venda? S/N");
 			desejaVenda = entrada.next().charAt(0);
 			desejaVenda = Character.toUpperCase(desejaVenda);
 			while (desejaVenda != 'S' && desejaVenda != 'N') {
-				System.out.println("Código inválido!!! \n Deseja cadastrar uma nova venda? S/N");
+				System.out
+						.println("Código inválido!!! \n Deseja cadastrar uma nova venda? S/N");
 				desejaVenda = entrada.next().charAt(0);
 				desejaVenda = Character.toUpperCase(desejaVenda);
 			}
-			ingresso=0;			
+			ingresso = 0;
+			quant = 0;
+			valorCompra = 0;
+			valorTotal = 0;
 			venda++;
 		}
-		
-		System.out.println("Total de Ingressos Vendidos: " + ingressoVendido + "\n Total de Vendas Realizadas: " + venda + "\n Valor Total das Vendas: " +  numFormatado.format(totalVenda) + "\n Valor da Maior Venda: " + maiorVenda);
+
+		System.out.println("Total de Ingressos Vendidos: " + ingressoVendido
+				+ "\n Total de Vendas Realizadas: " + venda
+				+ "\n Valor Total das Vendas: "
+				+ numFormatado.format(totalVenda) + "\n Valor da Maior Venda: "
+				+ maiorVenda);
 
 		entrada.close();
 	}
