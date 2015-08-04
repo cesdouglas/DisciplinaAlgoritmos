@@ -1,7 +1,10 @@
 package semestre2.alg;
 
+import java.util.Scanner;
+
 public class Exemplo_vetor {
 	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
 
 		//Declaracao e Instanciacao
 		int x[] = new int[3];
@@ -10,13 +13,23 @@ public class Exemplo_vetor {
 		int y[] = {134, 32323, 132};
 		
 		//Atribuicao de Valores no Vetor X
-		x[0] = 20;
-		x[1] = 30;
-		x[2] = 40;
+		for(int i = 0; i<x.length; i++){
+			System.out.println("Insira o valor da posicao " + i + ":");
+			x[i] = entrada.nextInt();
+		}
+				
+		//Utilizando quando nao se necessita trabalhar com indice,
+		//sendo apenas necessario apresentar os dados contidos no vetor
 		
-		System.out.println("Valor da Posicao 0 de X: " + x[0]);
-		System.out.println("Valor da Posicao 1 de X: " + x[1]);
-		System.out.println("Valor da Posicao 2 de X: " + x[2]);
+		for(int valorVetor: x){
+			System.out.println("O valor digitado foi: " + valorVetor);
+		}
 		
+		//Exibindo os dados do vetor Y usando o FOR
+		for(int i = 0; i<y.length; i++){
+			System.out.println("Valor da posicao " + i + "de y: " + y[i]);
+		}
+		
+		entrada.close();
 	}	
 }
