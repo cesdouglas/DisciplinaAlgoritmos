@@ -27,7 +27,7 @@ public class Exercicio3 {
 		//Atribuicao preco
 		for (int produtos = 0; produtos < precoProdutoLoja.length; produtos++) {
 			for (int lojas = 0; lojas < precoProdutoLoja[produtos].length; lojas++) {
-				precoProdutoLoja[produtos][lojas] = entrada.nextDouble();
+				precoProdutoLoja[produtos][lojas] = Math.random()*100;
 			}
 		}
 		
