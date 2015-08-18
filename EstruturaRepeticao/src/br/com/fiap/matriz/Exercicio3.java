@@ -48,11 +48,11 @@ public class Exercicio3 {
 		for (int produtos = 0; produtos < valorImpostoProdutoLoja.length; produtos++) {
 			for (int lojas = 0; lojas < valorImpostoProdutoLoja[produtos].length; lojas++) {
 				System.out.println(produto[produtos]);
-				System.out.println(lojas);
-				System.out.println(valorImpostoProdutoLoja[produtos][lojas]);
-				System.out.println(custoTransporte[produtos]);
-				System.out.println(precoProdutoLoja[produtos][lojas]);
-				System.out.println(precoProdutoLoja[produtos][lojas]+valorImpostoProdutoLoja[produtos][lojas]+custoTransporte[produtos]);
+				System.out.println("Loja: " + lojas);
+				System.out.println("Imposto: " + valorImpostoProdutoLoja[produtos][lojas]);
+				System.out.println("Custo Transporte: " + custoTransporte[produtos]);
+				System.out.println("Preco: " + precoProdutoLoja[produtos][lojas]);
+				System.out.println("Preco Final: " + precoProdutoLoja[produtos][lojas]+valorImpostoProdutoLoja[produtos][lojas]+custoTransporte[produtos]);
 			}
 		}
 		
