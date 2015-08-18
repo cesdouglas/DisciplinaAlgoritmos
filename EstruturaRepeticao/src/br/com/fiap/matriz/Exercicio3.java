@@ -53,6 +53,7 @@ public class Exercicio3 {
 				System.out.println("Custo Transporte: " + custoTransporte[produtos]);
 				System.out.println("Preco: " + precoProdutoLoja[produtos][lojas]);
 				System.out.println("Preco Final: " + precoProdutoLoja[produtos][lojas]+valorImpostoProdutoLoja[produtos][lojas]+custoTransporte[produtos]);
+				System.out.println("-------------------------------------------");
 			}
 		}
 		
